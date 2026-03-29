@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Under Construction | Supreme Engineers</title>
+    <meta name="description" content="This page is under construction." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Rajdhani:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-1: #0f3657;
+        --bg-2: #1a588b;
+        --panel: rgba(233, 242, 250, 0.12);
+        --line: rgba(214, 229, 244, 0.4);
+        --text: #e9f2fa;
+        --muted: #c3d8eb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Barlow", sans-serif;
+        color: var(--text);
+        background: radial-gradient(circle at 15% 10%, #2d6ca0 0%, var(--bg-2) 35%, var(--bg-1) 100%);
+        overflow: hidden;
+      }
+
+      .wrap {
+        width: min(760px, 92%);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--panel);
+        backdrop-filter: blur(6px);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        box-shadow: 0 20px 45px rgba(2, 16, 28, 0.28);
+      }
+
+      .gear {
+        width: 92px;
+        height: 92px;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+        border: 12px solid #aac1d8;
+        outline: 2px dashed #d2e2f1;
+        outline-offset: 8px;
+        animation: spin 3.6s linear infinite;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Rajdhani", sans-serif;
+        font-size: clamp(2rem, 5vw, 3.1rem);
+        letter-spacing: 0.01em;
+      }
+
+      p {
+        margin: 0.8rem auto 0;
+        max-width: 52ch;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 1.05rem;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .gear {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="gear" aria-hidden="true"></div>
+      <h1>Page Under Construction</h1>
+      <p>
+        This section is currently being built. Our team is preparing detailed content and will publish this page soon.
+      </p>
+    </main>
+  </body>
+</html>
