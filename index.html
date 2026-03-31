@@ -65,8 +65,25 @@
     />
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/intro-loader.css" />
   </head>
-  <body class="theme-blue">
+  <body class="theme-blue intro-loading">
+    <div class="intro-loader" id="introLoader" role="status" aria-live="polite" aria-label="Loading Supreme Engineers">
+      <div class="intro-loader__pattern" aria-hidden="true"></div>
+
+      <div class="intro-loader__machine" aria-hidden="true">
+        <div class="intro-gear intro-gear--left"><span></span></div>
+        <div class="intro-gear intro-gear--right"><span></span></div>
+        <div class="intro-belt"></div>
+        <div class="intro-piston-track">
+          <div class="intro-piston"></div>
+        </div>
+      </div>
+
+      <p class="intro-loader__title">SUPREME ENGINEERS</p>
+      <p class="intro-loader__subtitle">Calibrating Precision Motion...</p>
+    </div>
+
     <div data-include="components/header.html"></div>
 
     <main>
@@ -77,12 +94,12 @@
         <div class="hero-grid container">
           <div class="hero-visual reveal-delay">
             <div class="gear-ring"></div>
-            <img src="assets/images/gear.png" alt="Rotating industrial gear" class="hero-gear-image" loading="lazy" />
+            <img src="assets/images/gear.png" alt="Rotating industrial gear" class="hero-gear-image" />
             <div class="hero-product-blocks">
               <a href="pages/construction.html" class="hero-product-block" target="_blank" rel="noopener noreferrer">
                 <div class="hero-block-media">
-                  <img src="assets/images/t_pully.webp" alt="Time pulley model 1" class="hero-block-image hero-block-image-a" loading="lazy" />
-                  <img src="assets/images/t_pully2.webp" alt="Time pulley model 2" class="hero-block-image hero-block-image-b" loading="lazy" />
+                  <img src="assets/images/t_pully.webp" alt="Time pulley model 1" class="hero-block-image hero-block-image-a" />
+                  <img src="assets/images/t_pully2.webp" alt="Time pulley model 2" class="hero-block-image hero-block-image-b" />
                 </div>
                 <p>Time Pully</p>
               </a>
@@ -92,13 +109,11 @@
                     src="assets/images/telescopic1.webp"
                     alt="Universal joints model 1"
                     class="hero-block-image hero-block-image-a"
-                    loading="lazy"
                   />
                   <img
                     src="assets/images/telescopic2.webp"
                     alt="Universal joints model 2"
                     class="hero-block-image hero-block-image-b"
-                    loading="lazy"
                   />
                 </div>
                 <p>Universal Joints</p>
@@ -539,6 +554,7 @@
 
     <div data-include="components/footer.html"></div>
 
+    <script src="assets/js/intro-loader.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

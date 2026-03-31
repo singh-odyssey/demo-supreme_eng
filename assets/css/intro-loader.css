@@ -1,0 +1,167 @@
+:root {
+  --intro-bg-1: #0f2538;
+  --intro-bg-2: #133b58;
+  --intro-accent: #d7812a;
+  --intro-steel: #d8dee6;
+  --intro-steel-dark: #7f8b97;
+  --intro-line: rgba(255, 255, 255, 0.12);
+}
+
+body.intro-loading {
+  overflow: hidden;
+}
+
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(215, 129, 42, 0.18), transparent 35%),
+    radial-gradient(circle at 88% 88%, rgba(62, 162, 232, 0.16), transparent 30%),
+    linear-gradient(135deg, var(--intro-bg-1), var(--intro-bg-2));
+  color: #f3f8fd;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.65s ease, visibility 0.65s ease;
+}
+
+.intro-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-loader__pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--intro-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--intro-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, #000 22%, transparent 78%);
+  pointer-events: none;
+}
+
+.intro-loader__machine {
+  position: relative;
+  width: min(420px, 86vw);
+  height: 190px;
+}
+
+.intro-gear {
+  position: absolute;
+  top: 28px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      #eef3f8 0deg 10deg,
+      #8c98a4 10deg 20deg
+    );
+  box-shadow: inset 0 0 0 8px #4f5e6d, 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.intro-gear span {
+  position: absolute;
+  inset: 27%;
+  border-radius: 50%;
+  background: #2d3a46;
+  box-shadow: inset 0 0 0 6px var(--intro-steel-dark);
+}
+
+.intro-gear--left {
+  left: 46px;
+  animation: intro-spin-cw 2.3s linear infinite;
+}
+
+.intro-gear--right {
+  right: 46px;
+  animation: intro-spin-ccw 2.3s linear infinite;
+}
+
+.intro-belt {
+  position: absolute;
+  left: 122px;
+  right: 122px;
+  top: 68px;
+  height: 16px;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #1e2d3b 0 14px,
+      #2d4255 14px 28px
+    );
+  animation: intro-belt-move 1.4s linear infinite;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+}
+
+.intro-piston-track {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  bottom: 16px;
+  height: 38px;
+  border: 2px solid rgba(218, 229, 240, 0.46);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.intro-piston {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 84px;
+  height: 26px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #dbe3ec, #95a2af);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  animation: intro-piston-slide 1.2s ease-in-out infinite alternate;
+}
+
+.intro-loader__title {
+  margin: 0;
+  font-family: "Rajdhani", sans-serif;
+  font-size: clamp(1.5rem, 4.2vw, 2.3rem);
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+
+.intro-loader__subtitle {
+  margin: 0;
+  color: #c6d8e9;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes intro-spin-cw {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes intro-spin-ccw {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes intro-belt-move {
+  to { background-position: 56px 0; }
+}
+
+@keyframes intro-piston-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100% - 96px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-gear--left,
+  .intro-gear--right,
+  .intro-belt,
+  .intro-piston {
+    animation: none;
+  }
+}
