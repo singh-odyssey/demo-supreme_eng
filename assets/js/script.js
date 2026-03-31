@@ -1,23 +1,41 @@
 const loadComponents = async () => {
   let includeNodes = Array.from(document.querySelectorAll("[data-include]"));
 
+  const toAbsoluteUrl = (source, baseUrl) => {
+    try {
+      return new URL(source, baseUrl || window.location.href).toString();
+    } catch {
+      return source;
+    }
+  };
+
   while (includeNodes.length > 0) {
     await Promise.all(
       includeNodes.map(async (node) => {
         const source = node.getAttribute("data-include");
         if (!source) return;
 
+        const includeBase = node.getAttribute("data-include-base") || window.location.href;
+        const sourceUrl = toAbsoluteUrl(source, includeBase);
+
         try {
-          const response = await fetch(source);
+          const response = await fetch(sourceUrl);
           if (!response.ok) {
-            throw new Error(`Failed to load ${source}: ${response.status}`);
+            throw new Error(`Failed to load ${sourceUrl}: ${response.status}`);
           }
 
           node.innerHTML = await response.text();
+
+          node.querySelectorAll("[data-include]").forEach((child) => {
+            if (!child.hasAttribute("data-include-base")) {
+              child.setAttribute("data-include-base", sourceUrl);
+            }
+          });
         } catch (error) {
           console.error(error);
         } finally {
           node.removeAttribute("data-include");
+          node.removeAttribute("data-include-base");
         }
       })
     );
