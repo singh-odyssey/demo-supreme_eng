@@ -1,0 +1,91 @@
+/* Shared base styles for all pages. Keep page-specific visuals in dedicated files. */
+
+:root {
+  --bg: #edf4fb;
+  --surface: #ffffff;
+  --surface-alt: #e9eef2;
+  --ink: #142332;
+  --muted: #4a5b6a;
+  --brand: #0e4a7a;
+  --brand-2: #1f79b9;
+  --accent: #3ea2e8;
+  --line: #cfd7de;
+  --shadow: 0 16px 40px rgba(12, 38, 59, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Barlow", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 15% 10%, #ffffff 0%, #eaf3fc 45%, #dceaf8 100%);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Rajdhani", sans-serif;
+  line-height: 1.02;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.kicker {
+  margin: 0 0 0.8rem;
+  color: var(--brand);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  text-decoration: none;
+  padding: 0.72rem 1.1rem;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(100deg, var(--brand), var(--brand-2));
+  box-shadow: 0 10px 30px rgba(31, 121, 185, 0.32);
+}
+
+.btn-ghost {
+  color: var(--brand);
+  border: 1px solid var(--brand);
+  background: transparent;
+}
