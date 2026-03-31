@@ -1,0 +1,582 @@
+:root {
+	--about-bg: #ececec;
+	--about-card-bg: #ffffff;
+	--about-text: #1a1a1a;
+	--about-accent: #2f6aa2;
+	--about-shadow: 0 18px 40px rgba(16, 33, 56, 0.14);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Barlow", sans-serif;
+	color: var(--about-text);
+	background: var(--about-bg);
+}
+
+.about-page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0;
+	padding: 3rem 1rem 3.6rem;
+}
+
+.about-page > section {
+	width: min(1120px, 96%);
+	margin: 0;
+	padding: 0;
+}
+
+.about-page > section + section {
+	margin-top: 4.2rem;
+}
+
+.about-split {
+	background: var(--about-card-bg);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: stretch;
+	box-shadow: var(--about-shadow);
+	border-radius: 14px;
+	overflow: hidden;
+}
+
+.company-profile {
+	width: 100%;
+}
+
+.company-profile h2,
+.machinery-details h2,
+.legal-details h2,
+.industries-served h2 {
+	margin: 0 0 1rem;
+	text-align: center;
+	font-family: "Rajdhani", sans-serif;
+	font-size: clamp(1.5rem, 2vw + 0.8rem, 2.2rem);
+	letter-spacing: 0.04em;
+	font-weight: 700;
+	color: #243b53;
+}
+
+.company-profile h2 span,
+.machinery-details h2 span,
+.legal-details h2 span,
+.industries-served h2 span {
+	color: var(--about-accent);
+}
+
+.company-profile-table-wrap {
+	overflow-x: auto;
+	background: var(--about-card-bg);
+	box-shadow: var(--about-shadow);
+	border-radius: 12px;
+	-webkit-overflow-scrolling: touch;
+}
+
+.company-profile-table {
+	width: 100%;
+	min-width: 760px;
+	border-collapse: collapse;
+	font-size: 0.98rem;
+	line-height: 1.35;
+	color: #1f2f3d;
+}
+
+.company-profile-table th,
+.company-profile-table td {
+	padding: 0.72rem 0.62rem;
+	border: 1px solid #b9c0c7;
+	vertical-align: top;
+	text-align: left;
+}
+
+.company-profile-table thead th {
+	background: #2f6aa2;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 0.86rem;
+	letter-spacing: 0.02em;
+	font-weight: 700;
+}
+
+.company-profile-table tbody th {
+	width: 185px;
+	font-weight: 500;
+	background: #edf0f3;
+	text-transform: none;
+}
+
+.company-profile-table tbody td {
+	background: #edf0f3;
+}
+
+.machinery-details {
+	width: 100%;
+}
+
+.machinery-table-wrap {
+	overflow-x: auto;
+	background: var(--about-card-bg);
+	box-shadow: var(--about-shadow);
+	border-radius: 12px;
+	-webkit-overflow-scrolling: touch;
+}
+
+.machinery-table {
+	width: 100%;
+	min-width: 820px;
+	border-collapse: collapse;
+	font-size: 0.98rem;
+	line-height: 1.35;
+	color: #1f2f3d;
+}
+
+.machinery-table th,
+.machinery-table td {
+	padding: 0.72rem 0.62rem;
+	border: 1px solid #b9c0c7;
+	vertical-align: top;
+	text-align: left;
+}
+
+.machinery-table thead th {
+	background: #2f6aa2;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 0.86rem;
+	letter-spacing: 0.02em;
+	font-weight: 700;
+}
+
+.machinery-table tbody td {
+	background: #edf0f3;
+}
+
+.machinery-table tbody tr:nth-child(even) td {
+	background: #e6ebf0;
+}
+
+.legal-details {
+	width: 100%;
+}
+
+.legal-details-table-wrap {
+	overflow-x: auto;
+	background: var(--about-card-bg);
+	box-shadow: var(--about-shadow);
+	border-radius: 12px;
+	-webkit-overflow-scrolling: touch;
+}
+
+.legal-details-table {
+	width: 100%;
+	min-width: 760px;
+	border-collapse: collapse;
+	font-size: 0.98rem;
+	line-height: 1.35;
+	color: #1f2f3d;
+}
+
+.legal-details-table th,
+.legal-details-table td {
+	padding: 0.78rem 0.68rem;
+	border: 1px solid #b9c0c7;
+	vertical-align: top;
+	text-align: left;
+}
+
+.legal-details-table tr:first-child th {
+	background: #2f6aa2;
+	color: #ffffff;
+	font-size: 1rem;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.legal-details-table tr:first-child th:first-child {
+	width: 66%;
+}
+
+.legal-details-table tr:first-child th:last-child {
+	width: 34%;
+}
+
+.legal-details-table tr:nth-child(2) td,
+.legal-details-table tr:nth-child(4) td {
+	background: #efefef;
+}
+
+.legal-details-table tr:nth-child(3) td {
+	background: #e2e6eb;
+}
+
+.industries-served {
+	width: 100%;
+	overflow: hidden;
+}
+
+.about-stats {
+	width: 100%;
+	border-top: 1px solid #cdd2d8;
+	border-bottom: 1px solid #cdd2d8;
+	padding: 1.5rem 0;
+}
+
+.about-stats-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.about-stat-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0.9rem 0.85rem;
+	border-radius: 12px;
+}
+
+.about-stat-icon {
+	width: 32px;
+	height: 32px;
+	margin-bottom: 0.45rem;
+	color: #4f5f6c;
+}
+
+.about-stat-icon svg {
+	width: 100%;
+	height: 100%;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.about-stat-value {
+	margin: 0;
+	font-weight: 700;
+	font-size: 2rem;
+	line-height: 1;
+	color: #111b25;
+}
+
+.about-stat-label {
+	margin: 0.35rem 0 0;
+	font-size: 1.12rem;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	color: #0f2338;
+}
+
+.industries-marquee {
+	background: transparent;
+	overflow: hidden;
+	padding: 0.4rem 0 0.2rem;
+}
+
+.industries-track {
+	display: flex;
+	align-items: stretch;
+	gap: 1.3rem;
+	width: max-content;
+	animation: industries-left-to-right 40s linear infinite;
+	will-change: transform;
+}
+
+.industry-card {
+	width: clamp(240px, 24vw, 300px);
+	min-height: 150px;
+	padding: 1rem 1rem;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	text-align: center;
+	background:
+		linear-gradient(180deg, rgba(15, 74, 122, 0.08) 0%, rgba(15, 74, 122, 0.2) 100%),
+		repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.5) 0 10px, rgba(217, 227, 238, 0.5) 10px 20px);
+	border: 1px solid #b9c0c7;
+	box-shadow: 0 8px 18px rgba(20, 41, 66, 0.12);
+	border-radius: 10px;
+}
+
+.industry-card h3 {
+	margin: 0;
+	font-size: 1.05rem;
+	line-height: 1.35;
+	font-weight: 700;
+	color: #2f3f4c;
+	text-transform: uppercase;
+}
+
+@keyframes industries-left-to-right {
+	0% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.industries-track {
+		animation: none;
+	}
+}
+
+.about-media {
+	min-height: 320px;
+	background: #d9d9d9;
+}
+
+.about-media iframe {
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	border: 0;
+}
+
+.about-content {
+	padding: 3rem 2.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.about-content h1 {
+	margin: 0 0 1rem;
+	font-family: "Rajdhani", sans-serif;
+	font-size: clamp(1.75rem, 2vw + 1rem, 2.4rem);
+	letter-spacing: 0.04em;
+	font-weight: 700;
+}
+
+.about-content h1 span {
+	color: var(--about-accent);
+}
+
+.about-content p {
+	margin: 0;
+	font-size: 1.05rem;
+	line-height: 1.65;
+	letter-spacing: 0.01em;
+}
+
+.about-content p + p {
+	margin-top: 1rem;
+}
+
+@media (max-width: 980px) {
+	.about-split {
+		width: min(900px, 96%);
+		grid-template-columns: 1fr;
+	}
+
+	.about-media {
+		min-height: 360px;
+	}
+
+	.about-content {
+		padding: 2rem 1.5rem 2.1rem;
+	}
+
+	.about-content h1 {
+		font-size: clamp(1.8rem, 2.4vw + 1rem, 2.25rem);
+	}
+}
+
+@media (max-width: 640px) {
+	.about-page {
+		padding: 1.2rem 0.7rem 2rem;
+	}
+
+	.about-page > section + section {
+		margin-top: 2.4rem;
+	}
+
+	.about-split {
+		box-shadow: 0 10px 24px rgba(16, 33, 56, 0.16);
+	}
+
+	.about-media {
+		min-height: 220px;
+		order: 2;
+	}
+
+	.about-content {
+		order: 1;
+		padding: 1.25rem 1rem 1.3rem;
+		gap: 0.2rem;
+	}
+
+	.about-content h1 {
+		font-size: 1.65rem;
+		line-height: 1.05;
+		margin-bottom: 0.72rem;
+	}
+
+	.about-content p {
+		font-size: 0.94rem;
+		line-height: 1.58;
+	}
+
+	.section-title,
+	.company-profile h2,
+	.machinery-details h2,
+	.legal-details h2,
+	.industries-served h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.72rem;
+	}
+
+	.company-profile-table-wrap,
+	.machinery-table-wrap,
+	.legal-details-table-wrap {
+		padding-bottom: 0.1rem;
+	}
+
+	.company-profile-table,
+	.legal-details-table {
+		min-width: 640px;
+		font-size: 0.87rem;
+	}
+
+	.machinery-table {
+		min-width: 700px;
+		font-size: 0.86rem;
+	}
+
+	.company-profile-table th,
+	.company-profile-table td,
+	.machinery-table th,
+	.machinery-table td,
+	.legal-details-table th,
+	.legal-details-table td {
+		padding: 0.62rem 0.5rem;
+	}
+
+	.industries-marquee {
+		overflow: visible;
+	}
+
+	.industries-track {
+		animation: none;
+		width: 100%;
+		transform: none;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.8rem;
+	}
+
+	.industry-card[aria-hidden="true"] {
+		display: none;
+	}
+
+	.industry-card {
+		width: 100%;
+		min-height: 108px;
+		align-items: center;
+		padding: 0.9rem 0.8rem;
+	}
+
+	.industry-card h3 {
+		font-size: 0.9rem;
+		line-height: 1.28;
+	}
+
+	.about-stats {
+		padding: 0.8rem 0;
+		border-top: 0;
+		border-bottom: 0;
+	}
+
+	.about-stats-grid {
+		grid-template-columns: 1fr;
+		gap: 0.7rem;
+	}
+
+	.about-stat-card {
+		background: #ffffff;
+		border: 1px solid #d2dbe3;
+		box-shadow: 0 8px 20px rgba(21, 40, 61, 0.1);
+		padding: 0.9rem 0.85rem;
+	}
+
+	.company-profile h2 {
+		margin-bottom: 0.65rem;
+	}
+
+	.company-profile-table,
+	.machinery-table,
+	.legal-details-table {
+		font-size: 0.88rem;
+	}
+
+	.industries-track {
+		gap: 0.8rem;
+	}
+
+	.industry-card {
+		width: 100%;
+		min-height: 108px;
+	}
+
+	.industry-card h3 {
+		font-size: 0.9rem;
+	}
+
+	.about-stats {
+		padding: 0.8rem 0;
+	}
+
+	.about-stats-grid {
+		grid-template-columns: 1fr;
+		gap: 0.7rem;
+	}
+
+	.about-stat-icon {
+		width: 26px;
+		height: 26px;
+	}
+
+	.about-stat-value {
+		font-size: 1.45rem;
+	}
+
+	.about-stat-label {
+		font-size: 0.86rem;
+		margin-top: 0.25rem;
+		letter-spacing: 0.03em;
+	}
+}
+
+@media (max-width: 420px) {
+	.about-page {
+		padding-left: 0.55rem;
+		padding-right: 0.55rem;
+	}
+
+	.about-content {
+		padding: 1.1rem 0.9rem 1.2rem;
+	}
+
+	.about-content h1 {
+		font-size: 1.48rem;
+	}
+
+	.about-media {
+		min-height: 190px;
+	}
+
+	.about-stat-label {
+		font-size: 0.82rem;
+	}
+}

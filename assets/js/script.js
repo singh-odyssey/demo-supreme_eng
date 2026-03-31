@@ -31,14 +31,45 @@ const initNavigation = () => {
   const mainNav = document.getElementById("mainNav");
 
   if (menuToggle && mainNav) {
+    const isMobileNav = () => window.matchMedia("(max-width: 760px)").matches;
+
     menuToggle.addEventListener("click", () => {
       mainNav.classList.toggle("open");
     });
 
+    const submenuTriggers = mainNav.querySelectorAll("[data-submenu-trigger]");
+    submenuTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        if (!isMobileNav()) return;
+
+        const parentItem = trigger.closest(".has-dropdown, .has-submenu");
+        if (!parentItem) return;
+
+        event.preventDefault();
+        parentItem.classList.toggle("open");
+      });
+    });
+
     mainNav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
+        if (isMobileNav() && link.hasAttribute("data-submenu-trigger")) {
+          return;
+        }
+
         mainNav.classList.remove("open");
+
+        mainNav
+          .querySelectorAll(".has-dropdown.open, .has-submenu.open")
+          .forEach((node) => node.classList.remove("open"));
       });
+    });
+
+    window.addEventListener("resize", () => {
+      if (isMobileNav()) return;
+
+      mainNav
+        .querySelectorAll(".has-dropdown.open, .has-submenu.open")
+        .forEach((node) => node.classList.remove("open"));
     });
   }
 };

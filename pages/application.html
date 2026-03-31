@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Applications | Supreme Engineers</title>
+		<meta
+			name="description"
+			content="Explore practical applications for timing pulleys, universal joints, gears, and motion transmission systems by Supreme Engineers."
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="../assets/css/global.css" />
+		<link rel="stylesheet" href="../assets/css/home.css" />
+		<link rel="stylesheet" href="../assets/css/application.css" />
+	</head>
+
+	<body>
+		<div data-include="../components/header.html"></div>
+
+		<main class="application-page">
+			<section class="application-hero" aria-labelledby="application-title">
+				<div class="application-hero-grid">
+					<div class="application-hero-content">
+						<p class="application-kicker">Engineered for real production floors</p>
+						<h1 id="application-title">Industrial <span>Applications</span></h1>
+						<p>
+							Our components are designed for precision transmission, low maintenance and long duty cycles across food
+							processing, packaging, automation and custom machinery lines.
+						</p>
+						<div class="application-pills" aria-label="Application highlights">
+							<span>High Torque</span>
+							<span>Low Backlash</span>
+							<span>Custom Builds</span>
+						</div>
+					</div>
+
+					<figure class="application-hero-media reveal-on-scroll">
+						<img src="../assets/images/timing-pulley.png" alt="Timing pulley application in motion transmission" />
+						<figcaption>Featured drive component for synchronized movement systems.</figcaption>
+					</figure>
+				</div>
+			</section>
+
+			<section class="application-filter-wrap" aria-labelledby="application-grid-title">
+				<div class="application-filter-head">
+					<h2 id="application-grid-title">Use Cases by Industry</h2>
+					<p>Filter by sector to explore the most relevant machine application examples.</p>
+				</div>
+
+				<div class="application-filters" role="tablist" aria-label="Industry filters">
+					<button class="application-filter is-active" type="button" data-filter="all" role="tab" aria-selected="true">
+						All
+					</button>
+					<button class="application-filter" type="button" data-filter="packaging" role="tab" aria-selected="false">
+						Packaging
+					</button>
+					<button class="application-filter" type="button" data-filter="automation" role="tab" aria-selected="false">
+						Automation
+					</button>
+					<button class="application-filter" type="button" data-filter="textile" role="tab" aria-selected="false">
+						Textile
+					</button>
+					<button class="application-filter" type="button" data-filter="heavy" role="tab" aria-selected="false">
+						Heavy Duty
+					</button>
+				</div>
+
+				<div class="application-grid" id="applicationGrid">
+					<article class="application-card reveal-on-scroll" data-sector="packaging automation">
+						<img src="../assets/images/t_pully.webp" alt="Timing pulley set for conveyor packaging line" />
+						<div class="application-card-body">
+							<h3>Conveyor Synchronization</h3>
+							<p>Timing pulleys keep high-speed packaging conveyors indexed with clean, repeatable movement.</p>
+							<span>Packaging, Automation</span>
+						</div>
+					</article>
+
+					<article class="application-card reveal-on-scroll" data-sector="automation heavy">
+						<img src="../assets/images/universal joints.png" alt="Universal joint assembly for angled power transfer" />
+						<div class="application-card-body">
+							<h3>Angular Drive Transfer</h3>
+							<p>Universal joints deliver smooth torque between misaligned shafts in compact machine frames.</p>
+							<span>Automation, Heavy Duty</span>
+						</div>
+					</article>
+
+					<article class="application-card reveal-on-scroll" data-sector="textile packaging">
+						<img src="../assets/images/timing-belt.png" alt="Timing belt system for repeatable motion cycles" />
+						<div class="application-card-body">
+							<h3>Precision Feed Mechanisms</h3>
+							<p>Timing belts maintain constant speed ratio for print registration and textile feed controls.</p>
+							<span>Textile, Packaging</span>
+						</div>
+					</article>
+
+					<article class="application-card reveal-on-scroll" data-sector="heavy automation">
+						<img src="../assets/images/gear.png" alt="Industrial gear pair for power transmission" />
+						<div class="application-card-body">
+							<h3>Torque Multiplication</h3>
+							<p>High-strength gear systems are used for dependable reduction stages in process equipment.</p>
+							<span>Heavy Duty, Automation</span>
+						</div>
+					</article>
+
+					<article class="application-card reveal-on-scroll" data-sector="heavy textile">
+						<img src="../assets/images/coupling.png" alt="Mechanical coupling used in rotating shafts" />
+						<div class="application-card-body">
+							<h3>Vibration Isolation</h3>
+							<p>Couplings absorb alignment errors and dampen vibration in long-hour rotating operations.</p>
+							<span>Heavy Duty, Textile</span>
+						</div>
+					</article>
+
+					<article class="application-card reveal-on-scroll" data-sector="automation packaging">
+						<img src="../assets/images/rack-pinion.png" alt="Rack and pinion setup for linear automation" />
+						<div class="application-card-body">
+							<h3>Linear Motion Control</h3>
+							<p>Rack-pinion systems convert rotary force into controlled linear movement for automated stations.</p>
+							<span>Automation, Packaging</span>
+						</div>
+					</article>
+				</div>
+			</section>
+		</main>
+
+		<div data-include="../components/footer.html"></div>
+
+		<script src="../assets/js/script.js"></script>
+		<script src="../assets/js/pages/application.js"></script>
+	</body>
+</html>
