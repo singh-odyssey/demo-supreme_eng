@@ -213,7 +213,7 @@ body {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 1 rem 0 3rem;
+  padding: 1rem 0 3rem;
   background:
     radial-gradient(circle at 20% 18%, rgba(104, 176, 234, 0.2), rgba(104, 176, 234, 0) 48%),
     linear-gradient(160deg, #e8f3ff 0%, #d8eaff 52%, #c9e2fb 100%);
